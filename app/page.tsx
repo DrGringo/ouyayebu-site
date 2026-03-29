@@ -150,15 +150,12 @@ const ArtistCard = ({ name, genre, index }) => {
         <h3 className="text-2xl font-bold text-white font-mono mb-1 group-hover:text-green-500 transition-colors">
           {name}
         </h3>
-        <p className="text-gray-500 text-sm font-mono uppercase tracking-wider">
-          {genre}
-        </p>
+        <p className="text-gray-500 text-sm font-mono uppercase tracking-wider">{genre}</p>
       </div>
       <div className="absolute top-4 right-4 w-2 h-2 bg-green-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
     </motion.div>
   );
 };
-
 const Artists = () => {
   const artists = [
     { name: "Ën", genre: "Experimental Electronic" },
@@ -305,17 +302,17 @@ const Releases = () => {
                 </a>
               </div>
               <iframe
-                width="100%"
-                height="166"
-                scrolling="no"
-                frameBorder="no"
-                allow="autoplay"
-                src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(
-                  release.soundcloud
-                )}&color=%2322c55e&inverse=true&auto_play=false&show_user=true`}
-                loading="lazy"
-                title={`${release.title} player`}
-              ></iframe>
+                 width="100%"
+                 height="166"
+                 scrolling="no"
+                 frameBorder="no"
+                 allow="autoplay"
+                 src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(
+                 release.soundcloud
+                 )}&color=%2322c55e&inverse=true&auto_play=false&show_user=true`}
+                 loading="lazy"
+                 title={`${release.title} player`}
+               ></iframe>
             </motion.div>
           ))}
         </div>
@@ -345,6 +342,8 @@ const MusicPlayer = () => {
     </motion.div>
   );
 };
+
+
 
 const EventRow = ({ date, title, location, index }) => {
   return (
