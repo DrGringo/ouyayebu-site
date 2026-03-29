@@ -5,7 +5,6 @@ import { motion, useScroll, AnimatePresence } from "framer-motion";
 import {
   Menu,
   X,
-  Instagram,
   Mail,
   Calendar,
   User,
@@ -130,7 +129,13 @@ const Hero = () => {
   );
 };
 
-const ArtistCard = ({ name, genre, index }) => {
+type ArtistCardProps = {
+  name: string;
+  genre: string;
+  index: number;
+};
+
+const ArtistCard = ({ name, genre, index }: ArtistCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -150,12 +155,15 @@ const ArtistCard = ({ name, genre, index }) => {
         <h3 className="text-2xl font-bold text-white font-mono mb-1 group-hover:text-green-500 transition-colors">
           {name}
         </h3>
-        <p className="text-gray-500 text-sm font-mono uppercase tracking-wider">{genre}</p>
+        <p className="text-gray-500 text-sm font-mono uppercase tracking-wider">
+          {genre}
+        </p>
       </div>
       <div className="absolute top-4 right-4 w-2 h-2 bg-green-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
     </motion.div>
   );
 };
+
 const Artists = () => {
   const artists = [
     { name: "Ën", genre: "Experimental Electronic" },
@@ -343,9 +351,14 @@ const MusicPlayer = () => {
   );
 };
 
+type EventRowProps = {
+  date: string;
+  title: string;
+  location: string;
+  index: number;
+};
 
-
-const EventRow = ({ date, title, location, index }) => {
+const EventRow = ({ date, title, location, index }: EventRowProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: -50 }}
@@ -502,13 +515,13 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-6">
-          <motion.a
+          {/* "<motion.a
             href="https://www.instagram.com/ouyayebu/"
             whileHover={{ scale: 1.2, color: "#22c55e" }}
             className="text-gray-400 hover:text-green-500 transition-colors"
           >
             <Instagram className="w-6 h-6" />
-          </motion.a>
+          </motion.a>" */}
           <motion.a
             href="mailto:info@ouyayebu.com"
             whileHover={{ scale: 1.2, color: "#22c55e" }}
